@@ -10,6 +10,7 @@ const typeDefs = gql`
   
   type Query {
     me: User!
+    friends: [User]!
   }
 `
 
@@ -21,6 +22,25 @@ const resolvers = {
         avatar: 'http://yoda.png',
         fiends: [],
       }
+    },
+    friends: () => {
+      return [
+        {
+          email: 'yoda@masters.com',
+          avatar: 'http://yoda.png',
+          fiends: [],
+        },
+        {
+          email: 'yoda@masters.com2',
+          avatar: 'http://yoda.png',
+          fiends: [],
+        },
+        {
+          email: 'yoda@masters.com3',
+          avatar: 'http://yoda.png',
+          fiends: [],
+        }
+      ]
     }
   }
 }
