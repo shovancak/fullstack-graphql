@@ -7,6 +7,9 @@ module.exports = {
   Query: {
     pets: (_, __, { models }) => {
       return models.Pet.findMany()
+    },
+    shoes: (_, {input}) => {
+      return [{brand: 'Nike', size: 12}, {brand: 'Adidas', size: 11}, {brand: 'Nike', size: 11} ]. filter((shoe) => shoe.brand === input.brand)
     }
   },
   // Mutation: {
