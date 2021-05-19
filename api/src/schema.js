@@ -31,10 +31,19 @@ const typeDefs = gql`
     type: String
   }
 
+  input NewShoeInput {
+    brand: String!
+    size: Int!
+  }
+
   type Query {
     pets(input: PetInput): [Pet]!
     pet(input: PetInput): Pet
     shoes(input: ShoeInput): [Shoe]!
+  }
+
+  type Mutation {
+    newShoe(input: NewShoeInput!): Shoe!
   }
 
 `;
