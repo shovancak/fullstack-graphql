@@ -3,5 +3,35 @@
     "id": "jBWMVGjm50l6LGwepDoty",
     "username": "frontendmaster"
   },
-  "pet": []
+  "pet": [{
+    "id": "1",
+    "createdAt": "1.1.2020",
+    "name": "Moose",
+    "type": "dog"
+  },
+  {
+    "id": "2",
+    "createdAt": "2.2.2020",
+    "name": "Daryl",
+    "type": "dog"
+  },
+  {
+    "id": "3",
+    "createdAt": "3.3.2020",
+    "name": "Lina",
+    "type": "cat"
+  },
+  {
+    "id": "4",
+    "createdAt": "4.4.2020",
+    "name": "Kenny",
+    "type": "cat"
+  },
+  {
+    "id": "5",
+    "createdAt": "5.5.2020",
+    "name": "Donie",
+    "type": "dog"
+  }
+]
 }

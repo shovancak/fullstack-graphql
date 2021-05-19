@@ -26,8 +26,14 @@ const typeDefs = gql`
     size: Int
   }
 
+  input PetInput {
+    name: String
+    type: String
+  }
+
   type Query {
-    pets: [Pet]!
+    pets(input: PetInput): [Pet]!
+    pet(input: PetInput): Pet
     shoes(input: ShoeInput): [Shoe]!
   }
 

@@ -5,11 +5,14 @@
 
 module.exports = {
   Query: {
-    pets: (_, __, { models }) => {
-      return models.Pet.findMany()
+    pets: (_, {input}, ctx) => {
+      return ctx.models.Pet.findMany(input)
     },
     shoes: (_, {input}) => {
       return [{brand: 'Nike', size: 12}, {brand: 'Adidas', size: 11}, {brand: 'Nike', size: 11} ]. filter((shoe) => shoe.brand === input.brand)
+    },
+    pet: (_, {input}, ctx) => {
+      return ctx.models.Pet.findOne(input)
     }
   },
   // Mutation: {
