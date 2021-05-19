@@ -18,6 +18,9 @@ module.exports = {
   Mutation: {
     newShoe: (_, {input}) => {
       return input
+    },
+    newPet: (_, {input}, ctx) => {
+      return ctx.models.Pet.create(input)
     }
   },
   // Pet: {

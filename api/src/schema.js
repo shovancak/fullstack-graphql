@@ -36,6 +36,11 @@ const typeDefs = gql`
     size: Int!
   }
 
+  input NewPetInput {
+    name: String!
+    type: String!
+  }
+
   type Query {
     pets(input: PetInput): [Pet]!
     pet(input: PetInput): Pet
@@ -44,6 +49,7 @@ const typeDefs = gql`
 
   type Mutation {
     newShoe(input: NewShoeInput!): Shoe!
+    newPet(input: NewPetInput!): Pet!
   }
 
 `;
