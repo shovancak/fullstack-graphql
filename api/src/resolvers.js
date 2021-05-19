@@ -9,7 +9,7 @@ module.exports = {
       return ctx.models.Pet.findMany(input)
     },
     shoes: (_, {input}) => {
-      return [{brand: 'Nike', size: 12}, {brand: 'Adidas', size: 11}, {brand: 'Nike', size: 11} ]. filter((shoe) => shoe.brand === input.brand)
+      return [{brand: 'NIKE', size: 12, sport: 'Football'}, {brand: 'ADIDAS', size: 11, hasGrip: true}, {brand: 'PUMA', size: 11, hasGrip: true, sport: 'Basketball'} ]
     },
     pet: (_, {input}, ctx) => {
       return ctx.models.Pet.findOne(input)
@@ -23,6 +23,15 @@ module.exports = {
       return ctx.models.Pet.create(input)
     }
   },
+  Shoe: {
+    __resolveType: (shoe) => {
+        if(shoe.sport) {
+          return 'Sneaker'
+        } else {
+          return 'Boot'
+        }
+    }
+  }
   // Pet: {
   //   img(pet) {
   //     return pet.type === 'DOG'
