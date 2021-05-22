@@ -12,6 +12,7 @@ module.exports = {
       return [{brand: 'NIKE', size: 12, sport: 'Football'}, {brand: 'ADIDAS', size: 11, hasGrip: true}, {brand: 'PUMA', size: 11, hasGrip: true, sport: 'Basketball'} ]
     },
     pet: (_, {input}, ctx) => {
+      console.log('QUERY => pet')
       return ctx.models.Pet.findOne(input)
     }
   },
@@ -31,15 +32,17 @@ module.exports = {
           return 'Boot'
         }
     }
+  },
+  Pet: {
+    owner: (_, __,  ctx) => {
+      console.log('PET => owner')
+      return ctx.models.User.findOne()
+    }
+  },
+  User: {
+    pets: (user, __, ctx) => {
+      console.log('USER => pets')
+      return ctx.models.Pet.findMany()
+    }
   }
-  // Pet: {
-  //   img(pet) {
-  //     return pet.type === 'DOG'
-  //       ? 'https://placedog.net/300/300'
-  //       : 'http://placekitten.com/300/300'
-  //   }
-  // },
-  // User: {
-    
-  // }
 }
